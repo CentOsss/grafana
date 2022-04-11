@@ -17,4 +17,15 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['nodeexporter:9100']
+  - job_name: 'db.consalte.ru'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['192.168.204.13:9100']
+
+  - job_name: 'postgresql'
+    static_configs:
+      - targets: ['192.168.204.13:9187']
+        labels:
+          alias: postgres
+ 
 
